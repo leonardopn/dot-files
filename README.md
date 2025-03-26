@@ -20,7 +20,7 @@ makepkg -si
 2. Install the following packages using paru
 
 ```bash
-paru -S zsh thefuck jenv fzf git git-credential-oauth kitty
+paru -S $(cat ./packages.txt)
 ```
 
 3. Install packages via script
