@@ -79,11 +79,11 @@ dconf dump /org/gnome/shell/extensions/ > gnome-extensions.dconf
 
 ## Wallpaper
 
-```bash
-cp -r ./wallpapers ~/Pictures
+I'm using an external wallpaper repository with a lot of wallpapers. After cloning the repository, the slideshow extension will do the rest of the work.
 
-### Configure Wallpaper in GNOME
-gsettings set org.gnome.desktop.background picture-uri "file://$HOME/Pictures/wallpapers/<wallpaper-name>"
+```bash
+mkdir -p ~/Pictures/Wallpapers
+git clone https://github.com/orangci/walls-catppuccin-mocha.git ~/Pictures/Wallpapers
 ```
 
 ## Terminal - Kitty
