@@ -20,7 +20,7 @@ makepkg -si
 2. Install the following packages using paru
 
 ```bash
-paru -S $(cat ./packages.txt)
+paru -S --needed $(cat ./packages.txt)
 ```
 
 3. Install packages via script
@@ -42,6 +42,24 @@ Install the `JetBrains Mono` fonts for the terminal and text editor.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 ```
 
+# Icons Configuration
+
+```bash
+gsettings set org.gnome.desktop.interface icon-theme "Papirus"
+```
+
+## Mirror Configuration
+
+```bash
+sudo reflector \
+    --protocol https \
+    --latest 200 \
+    --sort rate \
+    --save /etc/pacman.d/mirrorlist \
+    --threads 10 \
+    --verbose
+```
+
 ## Configure Git
 
 ```bash
@@ -51,6 +69,12 @@ git config --global --unset-all credential.helper
 git config --global --add credential.helper "cache --timeout 21600" # six hours
 git config --global --add credential.helper libsecret
 git config --global --add credential.helper oauth
+```
+
+## Get Gnome Extensions
+
+```bash
+dconf dump /org/gnome/shell/extensions/ > gnome-extensions.dconf
 ```
 
 ## Wallpaper

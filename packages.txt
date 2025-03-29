@@ -43,3 +43,5 @@ timeshift
 torbrowser-launcher
 seahorse
 pacman-contrib
+reflector
+papirus-icon-theme
