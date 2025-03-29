@@ -42,3 +42,4 @@ scrcpy
 timeshift
 torbrowser-launcher
 seahorse
+pacman-contrib
