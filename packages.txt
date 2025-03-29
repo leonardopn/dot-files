@@ -45,3 +45,5 @@ seahorse
 pacman-contrib
 reflector
 papirus-icon-theme
+ulauncher
+fd

@@ -1,0 +1,16 @@
+{
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2025-03-29T13:55:19.690720",
+        "last_commit": "827cfe5e1d2f89f742f811f981759787b0654fa9",
+        "last_commit_time": "2023-11-04T18:37:13"
+    },
+    "com.github.hillaryychan.ulauncher-fzf": {
+        "id": "com.github.hillaryychan.ulauncher-fzf",
+        "url": "https://github.com/hillaryychan/ulauncher-fzf.git",
+        "updated_at": "2025-03-29T13:57:26.220219",
+        "last_commit": "e8137dae6448041fc53ae418263501b068857073",
+        "last_commit_time": "2023-05-16T12:35:35"
+    }
+}

@@ -86,6 +86,14 @@ mkdir -p ~/Pictures/Wallpapers
 git clone https://github.com/orangci/walls-catppuccin-mocha.git ~/Pictures/Wallpapers
 ```
 
+## ULauncher
+
+```bash
+ln -s -f $(realpath ./ulauncher) ~/.config/ulauncher
+
+python3 <(curl https://raw.githubusercontent.com/catppuccin/ulauncher/main/install.py -fsSL) -f all -a all
+```
+
 ## Terminal - Kitty
 
 1. Add the `kitty.config` file to the `~` folder
