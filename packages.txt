@@ -41,3 +41,4 @@ rust
 scrcpy
 timeshift
 torbrowser-launcher
+seahorse
