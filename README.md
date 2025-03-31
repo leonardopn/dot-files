@@ -66,7 +66,6 @@ sudo reflector \
 git config --global user.name "Leonardo Petta do Nascimento"
 git config --global user.email "leonardocps9@protonmail.com"
 git config --global --unset-all credential.helper
-git config --global --add credential.helper "cache --timeout 21600" # six hours
 git config --global --add credential.helper libsecret
 git config --global --add credential.helper oauth
 ```
