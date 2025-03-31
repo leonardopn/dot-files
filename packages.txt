@@ -47,3 +47,4 @@ reflector
 papirus-icon-theme
 ulauncher
 fd
+kdeconnect
