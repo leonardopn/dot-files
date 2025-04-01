@@ -48,3 +48,4 @@ papirus-icon-theme
 ulauncher
 fd
 kdeconnect
+dconf-editor
