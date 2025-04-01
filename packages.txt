@@ -49,3 +49,4 @@ ulauncher
 fd
 kdeconnect
 dconf-editor
+gnome-shell-extension-pop-shell
