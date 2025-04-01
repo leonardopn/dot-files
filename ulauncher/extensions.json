@@ -12,5 +12,26 @@
         "updated_at": "2025-03-29T13:57:26.220219",
         "last_commit": "e8137dae6448041fc53ae418263501b068857073",
         "last_commit_time": "2023-05-16T12:35:35"
+    },
+    "com.github.sergius02.ulauncher-colorconverter": {
+        "id": "com.github.sergius02.ulauncher-colorconverter",
+        "url": "https://github.com/sergius02/ulauncher-colorconverter",
+        "updated_at": "2025-03-31T20:57:04.451292",
+        "last_commit": "2d5e2bc17e89f1f1dc561f73e68ea574e0be844a",
+        "last_commit_time": "2020-12-06T20:59:43"
+    },
+    "com.github.devkleber.ulauncher-generate-document": {
+        "id": "com.github.devkleber.ulauncher-generate-document",
+        "url": "https://github.com/DevKleber/ulauncher-generate-document",
+        "updated_at": "2025-03-31T20:59:56.107336",
+        "last_commit": "398a4401568dd7f28ca7cc6fc0518833b50d845d",
+        "last_commit_time": "2025-03-02T17:08:18"
+    },
+    "com.github.balazsorban44.ulauncher-jwt-ext": {
+        "id": "com.github.balazsorban44.ulauncher-jwt-ext",
+        "url": "https://github.com/balazsorban44/ulauncher-jwt-ext",
+        "updated_at": "2025-03-31T21:00:47.232328",
+        "last_commit": "8697c5e277961ebac6eab47c955f432a62c41e23",
+        "last_commit_time": "2024-11-15T17:26:38"
     }
 }
