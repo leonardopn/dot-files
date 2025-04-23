@@ -63,11 +63,23 @@ sudo reflector \
 ## Configure Git
 
 ```bash
-git config --global user.name "Leonardo Petta do Nascimento"
-git config --global user.email "leonardocps9@protonmail.com"
-git config --global --unset-all credential.helper
-git config --global --add credential.helper libsecret
-git config --global --add credential.helper oauth
+cat <<EOF > ~/.gitconfig
+[user]
+    email = leonardocps9@protonmail.com
+    name = Leonardo Petta do Nascimento
+[pull]
+    ff = only
+[credential]
+    helper = libsecret
+[http]
+    postBuffer = 157286400
+[credential "https://github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+EOF
 ```
 
 ## Get Gnome Extensions
