@@ -51,13 +51,13 @@ gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 ## Mirror Configuration
 
 ```bash
-sudo reflector \
-    --protocol https \
-    --latest 200 \
-    --sort rate \
-    --save /etc/pacman.d/mirrorlist \
-    --threads 10 \
-    --verbose
+./scripts/update-mirrors.sh
+```
+
+### Configure a cron job to update the mirror list
+
+```bash
+sudo ln -s -f $(realpath ./scripts/update-mirrors.sh) /etc/cron.weekly/update-mirrors | chmod +x /etc/cron.weekly/update-mirrors
 ```
 
 ## Configure Git
