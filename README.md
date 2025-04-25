@@ -34,6 +34,26 @@ curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/instal
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | zsh
 ```
 
+## zsh
+
+1. Add the `.zshrc` file to the `~` folder
+
+```bash
+ln -s -f $(realpath ./.zshrc) ~/.zshrc
+```
+
+2. Set ZSH as the default shell
+
+```bash
+chsh -s $(which zsh)
+```
+
+3. Install ZSH plugin
+
+```bash
+zplug install
+```
+
 ## Font Configuration
 
 Install the `JetBrains Mono` fonts for the terminal and text editor.
@@ -66,10 +86,18 @@ sudo ln -s -f $(realpath ./scripts/update-mirrors.sh) /etc/cron.weekly/update-mi
 ln -s -f $(realpath ./git/.gitconfig) ~/.gitconfig
 ```
 
-## Get Gnome Extensions
+## Gnome Extensions
+
+### Backup the extension configs
 
 ```bash
-dconf dump /org/gnome/shell/extensions/ > gnome-extensions.dconf
+dconf dump /org/gnome/shell/extensions/ > gnome/extensions.dconf
+```
+
+### Restore the extension configs
+
+```bash
+dconf load /org/gnome/shell/extensions/ < gnome/extensions.dconf
 ```
 
 ## Wallpaper
@@ -93,24 +121,4 @@ ln -s -f $(realpath ./albert) ~/.config
 
 ```bash
 ln -s -f $(realpath ./kitty.config) ~/.config/kitty/kitty.conf
-```
-
-## zsh
-
-1. Add the `.zshrc` file to the `~` folder
-
-```bash
-ln -s -f $(realpath ./.zshrc) ~/.zshrc
-```
-
-2. Set ZSH as the default shell
-
-```bash
-chsh -s $(which zsh)
-```
-
-3. Install ZSH plugin
-
-```bash
-zplug install
 ```
