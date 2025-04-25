@@ -3,7 +3,7 @@ thefuck
 jenv
 fzf
 git
-git-credential-oauth
+git-credential-manager-bin
 kitty
 ferdium
 mongodb-compass

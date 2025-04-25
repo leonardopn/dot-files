@@ -63,23 +63,7 @@ sudo ln -s -f $(realpath ./scripts/update-mirrors.sh) /etc/cron.weekly/update-mi
 ## Configure Git
 
 ```bash
-cat <<EOF > ~/.gitconfig
-[user]
-    email = leonardocps9@protonmail.com
-    name = Leonardo Petta do Nascimento
-[pull]
-    ff = only
-[credential]
-    helper = libsecret
-[http]
-    postBuffer = 157286400
-[credential "https://github.com"]
-    helper =
-    helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-    helper =
-    helper = !/usr/bin/gh auth git-credential
-EOF
+ln -s -f $(realpath ./git/.gitconfig) ~/.gitconfig
 ```
 
 ## Get Gnome Extensions
