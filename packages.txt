@@ -51,3 +51,4 @@ dconf-editor
 gnome-shell-extension-pop-shell
 teams
 rate-mirrors-bin
+docker
