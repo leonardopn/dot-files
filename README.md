@@ -100,6 +100,18 @@ dconf dump /org/gnome/shell/extensions/ > gnome/extensions.dconf
 dconf load /org/gnome/shell/extensions/ < gnome/extensions.dconf
 ```
 
+### Backup keybindings
+
+```bash
+./scripts/backup-restore-gnome-keybindings.sh backup
+```
+
+### Restore keybindings
+
+```bash
+./scripts/backup-restore-gnome-keybindings.sh restore
+```
+
 ## Wallpaper
 
 I'm using an external wallpaper repository with a lot of wallpapers. After cloning the repository, the slideshow extension will do the rest of the work.

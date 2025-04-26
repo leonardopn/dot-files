@@ -1,0 +1,19 @@
+[custom0]
+binding='Print'
+command='script --command "QT_QPA_PLATFORM=wayland flameshot gui" /dev/null'
+name='Flameshot'
+
+[custom1]
+binding='<Super>q'
+command='kitty'
+name='Terminal'
+
+[custom2]
+binding='<Super>space'
+command='albert toggle'
+name='Open Albert'
+
+[custom3]
+binding='<Alt><Super>space'
+command='albert'
+name='Open Albert'
