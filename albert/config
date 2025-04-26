@@ -76,7 +76,7 @@ enabled=true
 enabled=true
 
 [python.translators]
-enabled=true
+enabled=false
 lang=en
 
 [python.unit_converter]
