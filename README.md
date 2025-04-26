@@ -86,7 +86,7 @@ sudo ln -s -f $(realpath ./scripts/update-mirrors.sh) /etc/cron.weekly/update-mi
 ln -s -f $(realpath ./git/.gitconfig) ~/.gitconfig
 ```
 
-## Gnome Extensions
+## Gnome
 
 ### Backup the extension configs
 
@@ -110,6 +110,12 @@ dconf load /org/gnome/shell/extensions/ < gnome/extensions.dconf
 
 ```bash
 ./scripts/backup-restore-gnome-keybindings.sh restore
+```
+
+### Restore startup applications
+
+```bash
+ln -s -f $(realpath ./gnome/autostart) ~/.config
 ```
 
 ## Wallpaper
