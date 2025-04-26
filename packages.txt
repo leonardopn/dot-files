@@ -44,6 +44,7 @@ seahorse
 pacman-contrib
 reflector
 papirus-icon-theme
+papirus-folders
 ulauncher
 fd
 kdeconnect

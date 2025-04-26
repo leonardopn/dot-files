@@ -65,7 +65,7 @@ Install the `JetBrains Mono` fonts for the terminal and text editor.
 # Icons Configuration
 
 ```bash
-gsettings set org.gnome.desktop.interface icon-theme "Papirus"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus" && papirus-folders -C nordic
 ```
 
 ## Mirror Configuration
