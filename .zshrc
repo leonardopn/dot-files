@@ -55,6 +55,7 @@ alias clpp="clasp pull"
 alias shut="shutdown -h now"
 alias clear-orphans="sudo pacman -Rns $(pacman -Qtdq)"
 alias expo="npx expo"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # If droidcam stops, run this alias to install dependencies and after, run reboot.
 alias droidcam-config="sudo pacman -S v4l2loopback-dkms linux-headers"
