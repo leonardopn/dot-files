@@ -135,8 +135,8 @@ ln -s -f $(realpath ./albert) ~/.config
 
 ## Terminal - Kitty
 
-1. Add the `kitty.config` file to the `~` folder
+1. Add the `kitty` folder to the `~/.config` folder
 
 ```bash
-ln -s -f $(realpath ./kitty.config) ~/.config/kitty/kitty.conf
+ln -s -f $(realpath ./kitty) ~/.config
 ```
