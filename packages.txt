@@ -54,3 +54,4 @@ rate-mirrors-bin
 docker
 expac
 albert
+bibata-cursor-theme-bin
