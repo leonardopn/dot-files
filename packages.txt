@@ -57,3 +57,4 @@ albert
 bibata-cursor-theme-bin
 gnome-browser-connector
 fastfetch
+alsa-utils
