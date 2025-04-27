@@ -55,3 +55,4 @@ docker
 expac
 albert
 bibata-cursor-theme-bin
+gnome-browser-connector
