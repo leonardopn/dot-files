@@ -140,3 +140,13 @@ ln -s -f $(realpath ./albert) ~/.config
 ```bash
 ln -s -f $(realpath ./kitty) ~/.config
 ```
+
+## Standalone Applications
+
+### git-clean
+
+A small bash script to clean local branches and tags that are not present in the remote repository.
+
+```bash
+sudo ln -s -f $(realpath ./scripts/git-clean.sh) /usr/local/bin/git-clean
+```
