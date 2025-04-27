@@ -45,7 +45,6 @@ pacman-contrib
 reflector
 papirus-icon-theme
 papirus-folders
-ulauncher
 fd
 kdeconnect
 dconf-editor
@@ -53,3 +52,5 @@ gnome-shell-extension-pop-shell
 teams
 rate-mirrors-bin
 docker
+expac
+albert
