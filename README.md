@@ -39,7 +39,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | zsh
 1. Add the `.zshrc` file to the `~` folder
 
 ```bash
-ln -s -f $(realpath ./.zshrc) ~/.zshrc
+ln -s -f $(realpath ./zsh/.zshrc) ~/
 ```
 
 2. Create the `~/.zfunc` folder
