@@ -64,6 +64,7 @@ enabled=true
 [python.emoji]
 enabled=true
 global_handler_enabled=false
+trigger=emoji
 use_derived=true
 
 [python.goldendict]
