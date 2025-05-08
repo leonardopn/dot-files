@@ -141,6 +141,24 @@ ln -s -f $(realpath ./albert) ~/.config
 ln -s -f $(realpath ./kitty) ~/.config
 ```
 
+## Config Docker
+
+### Start and enable docker service
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+### Add user to docker group
+
+```bash
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+```
+
 ## Standalone Applications
 
 ### git-clean
