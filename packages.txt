@@ -60,3 +60,4 @@ fastfetch
 alsa-utils
 gcolor3
 docker-compose
+python-pipx

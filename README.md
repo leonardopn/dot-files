@@ -42,13 +42,19 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | zsh
 ln -s -f $(realpath ./.zshrc) ~/.zshrc
 ```
 
-2. Set ZSH as the default shell
+2. Create the `~/.zfunc` folder
+
+```bash
+ln -s -f $(realpath ./zsh/.zfunc) ~/
+```
+
+3. Set ZSH as the default shell
 
 ```bash
 chsh -s $(which zsh)
 ```
 
-3. Install ZSH plugin
+4. Install ZSH plugin
 
 ```bash
 zplug install
@@ -157,6 +163,14 @@ sudo systemctl enable docker
 sudo usermod -aG docker $USER
 
 newgrp docker
+```
+
+## Python configuration
+
+### Config Poetry
+
+```bash
+pipx install poetry
 ```
 
 ## Standalone Applications

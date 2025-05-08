@@ -1,6 +1,9 @@
 # Initialize plugins
 source ~/.zplug/init.zsh
 
+# Enable custom functions
+fpath+=~/.zfunc
+
 # Enable History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -118,3 +121,6 @@ load-nvmrc
 
 # Config for console ninja extension
 PATH=~/.console-ninja/.bin:$PATH
+
+# Created by `pipx` on 2025-05-08 20:38:07
+export PATH="$PATH:/home/leonardopn/.local/bin"
