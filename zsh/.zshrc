@@ -56,7 +56,7 @@ zplug load
 alias clpe="clasp push"
 alias clpp="clasp pull"
 alias shut="shutdown -h now"
-alias clear-orphans="sudo pacman -Rns $(pacman -Qtdq)"
+alias clean-orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias expo="npx expo"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
