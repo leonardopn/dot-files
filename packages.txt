@@ -62,3 +62,4 @@ gcolor3
 docker-compose
 python-pipx
 gitflow-avh
+pyenv
