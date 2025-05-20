@@ -124,3 +124,8 @@ PATH=~/.console-ninja/.bin:$PATH
 
 # Created by `pipx` on 2025-05-08 20:38:07
 export PATH="$PATH:/home/leonardopn/.local/bin"
+
+# Configuration for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
