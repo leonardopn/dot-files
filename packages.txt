@@ -63,3 +63,4 @@ docker-compose
 python-pipx
 gitflow-avh
 pyenv
+zotero-bin
