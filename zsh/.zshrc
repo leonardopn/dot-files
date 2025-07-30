@@ -59,6 +59,9 @@ alias shut="shutdown -h now"
 alias clean-orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias expo="npx expo"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias tf="terraform"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
 
 # If droidcam stops, run this alias to install dependencies and after, run reboot.
 alias droidcam-config="sudo pacman -S v4l2loopback-dkms linux-headers"
