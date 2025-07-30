@@ -114,11 +114,12 @@ systemShadow=true
 [widgetsboxmodel-ng]
 alwaysOnTop=true
 clearOnHide=true
-darkTheme=Nord Dark
+darkTheme=
 displayScrollbar=false
 followCursor=false
 hideOnFocusLoss=true
 historySearch=true
 itemCount=5
+lightTheme=
 quitOnClose=false
 showCentered=true
