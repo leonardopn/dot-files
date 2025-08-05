@@ -60,6 +60,7 @@ alias clean-orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias expo="npx expo"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias tf="terraform"
+alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 
