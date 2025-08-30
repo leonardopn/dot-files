@@ -3,6 +3,9 @@ frontend=widgetsboxmodel-ng
 hotkey=Ctrl+Alt+Shift+(
 telemetry=true
 
+[application]
+enabled=false
+
 [applications]
 enabled=true
 
@@ -71,6 +74,9 @@ use_derived=true
 enabled=false
 
 [python.pacman]
+enabled=true
+
+[python.python_eval]
 enabled=true
 
 [python.syncthing]
