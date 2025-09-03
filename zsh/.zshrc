@@ -4,6 +4,9 @@ source ~/.zplug/init.zsh
 # Enable custom functions
 fpath+=~/.zfunc
 
+# Configs for local binaries
+export PATH="$HOME/.local/bin/:$PATH"
+
 # Enable History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
