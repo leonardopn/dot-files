@@ -1,5 +1,5 @@
 [General]
-frontend=widgetsboxmodel-ng
+frontend=widgetsboxmodel
 hotkey=Ctrl+Alt+Shift+(
 telemetry=true
 
@@ -112,7 +112,7 @@ followCursor=true
 hideOnFocusLoss=true
 historySearch=true
 itemCount=10
-lightTheme=Default Dark
+lightTheme=Default System Palette
 quitOnClose=false
 showCentered=true
 systemShadow=true
