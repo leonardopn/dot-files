@@ -64,6 +64,58 @@ alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 
+if command -v apt >/dev/null; then
+    paru() {
+    case "$1" in
+        # Instalar pacotes (ex: paru -S htop neofetch)
+        "-S")
+            shift # Remove o "-S" da lista de argumentos
+            sudo apt install -y "$@"
+            ;;
+        # Atualizar o sistema (ex: paru -Syu ou simplesmente paru)
+        "-Syu" | "")
+            sudo apt update && sudo apt full-upgrade -y
+            ;;
+        # Remover pacotes (ex: paru -R htop)
+        "-R")
+            shift
+            sudo apt remove -y "$@"
+            ;;
+        # Remover pacotes e suas dependências (ex: paru -Rsn htop)
+        "-Rsn")
+            shift
+            sudo apt autoremove --purge -y "$@"
+            ;;
+        # Pesquisar pacotes (ex: paru -Ss htop)
+        "-Ss")
+            shift
+            apt search "$@"
+            ;;
+        # Limpar cache
+        "-Scc")
+            sudo apt clean
+            ;;
+        *)
+
+            echo "Uso:
+            paru [-S | -Syu | -R | -Rsn | -Ss | -Scc] [pacote(s)]
+            
+            Opções:
+              -S      Instala o(s) pacote(s) especificado(s) do repositório oficial.
+              -Syu    Sincroniza a lista de pacotes dos repositórios e atualiza todos os pacotes instalados.
+              -R      Remove o(s) pacote(s) especificado(s).
+              -Rsn    Remove o(s) pacote(s) especificado(s) e também elimina dependências órfãs.
+              -Ss     Busca por pacote(s) no repositório oficial, exibindo resultados compatíveis.
+              -Scc    Limpa o cache de pacotes baixados e arquivos de compilação obsoletos."
+            return 1
+            ;;
+    esac
+}
+
+# Cria um alias para que 'pacman' também use a mesma função
+alias pacman='paru'
+fi
+
 # If droidcam stops, run this alias to install dependencies and after, run reboot.
 alias droidcam-config="sudo pacman -S v4l2loopback-dkms linux-headers"
 
