@@ -77,7 +77,7 @@ if command -v apt >/dev/null; then
             ;;
         # Atualizar o sistema (ex: paru -Syu ou simplesmente paru)
         "-Syu" | "")
-            sudo apt update && sudo apt full-upgrade -y
+            sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo snap refresh
             ;;
         # Remover pacotes (ex: paru -R htop)
         "-R")
