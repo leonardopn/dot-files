@@ -3,5 +3,6 @@ email = leonardocps9@protonmail.com
 name = Leonardo Petta do Nascimento
 [pull]
 ff = only
-[credential]
-helper = libsecret
+
+[includeIf "gitdir:~/Documents/Git/work/"]
+    path = ~/.gitconfig-work
