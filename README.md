@@ -94,6 +94,12 @@ ln -s -f $(realpath ./git/.gitconfig) ~/.gitconfig
 
 ## Gnome
 
+### Backup extension list
+
+```bash
+gnome-extensions list > gnome/extension-list.txt
+```
+
 ### Backup the extension configs
 
 ```bash

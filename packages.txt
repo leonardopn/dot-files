@@ -65,3 +65,4 @@ pyenv
 zotero-bin
 mypy
 downgrade
+extension-manager
