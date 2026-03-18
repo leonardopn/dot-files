@@ -191,3 +191,34 @@ eval "$(pyenv init - zsh)"
 
 # Configs for Go Lang
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
+# Upload file to S3 via presigned PUT URL
+# Usage: s3-presigned-upload <file> <mime-type> <presigned-url>
+s3-presigned-upload() {
+  local file="$1"
+  local mime="$2"
+  local url="$3"
+
+  if [[ -z "$file" || -z "$mime" || -z "$url" ]]; then
+    echo "Usage: s3-presigned-upload <file> <mime-type> <presigned-url>" >&2
+    return 1
+  fi
+
+  if [[ ! -f "$file" ]]; then
+    echo "Error: file not found: $file" >&2
+    return 1
+  fi
+
+  curl -sS -w "\nHTTP %{http_code}\n" -X PUT \
+    -H "Content-Type: ${mime}" \
+    -T "$file" \
+    "$url"
+}
+
+s3-presigned-upload-auto() {
+  local file="$1" url="$2"
+  [[ -z "$file" || -z "$url" ]] && { echo "Usage: s3-presigned-upload-auto <file> <presigned-url>" >&2; return 1 }
+  local mime
+  mime=$(file -b --mime-type "$file") || return 1
+  s3-presigned-upload "$file" "$mime" "$url"
+}
