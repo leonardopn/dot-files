@@ -1,8 +1,15 @@
 [user]
-email = leonardocps9@protonmail.com
-name = Leonardo Petta do Nascimento
+	email = leonardocps9@protonmail.com
+	name = Leonardo Petta do Nascimento
+	signingkey = /home/leonardopn/.ssh/id_ed25519.pub
+
 [pull]
-ff = only
+	ff = only
 
 [includeIf "gitdir:~/Documents/Git/work/"]
     path = ~/.gitconfig-work
+	
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
