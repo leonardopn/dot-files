@@ -86,6 +86,32 @@ gsettings set org.gnome.desktop.interface icon-theme "Papirus" && papirus-folder
 sudo ln -s -f $(realpath ./scripts/update-mirrors.sh) /etc/cron.weekly/update-mirrors | chmod +x /etc/cron.weekly/update-mirrors
 ```
 
+## Config SSH
+
+1. Move the `.ssh` folder to the `~` folder
+
+```bash
+ln -s -f $(realpath ./.ssh) ~/.ssh
+```
+
+2. Start the SSH agent
+
+```bash
+systemctl --user enable --now ssh-agent
+```
+
+3. Create the `~/.config/environment.d` folder if it doesn't exist
+
+````bash
+mkdir -p ~/.config/environment.d
+``
+
+4. Add the following line to a new file called `ssh-agent.conf` in the `~/.config/environment.d` folder
+
+```bash
+echo SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket" > ~/.config/environment.d/ssh-agent.conf
+````
+
 ## Configure Git
 
 ```bash

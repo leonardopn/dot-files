@@ -147,6 +147,9 @@ export PATH="$HOME/.amplify/bin:$PATH"
 # Config a local path to install global node modules
 export PATH=~/.npm-global/bin:$PATH
 
+# Configs for SSH Agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/leonardopn/temp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/leonardopn/temp/google-cloud-sdk/path.zsh.inc'; fi
 
