@@ -66,6 +66,7 @@ alias tf="terraform"
 alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
+alias fix-resolution="bash ~/Documents/scripts/set_ultrawide.sh"
 
 if command -v apt >/dev/null; then
     paru() {
@@ -197,7 +198,7 @@ export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 # Upload file to S3 via presigned PUT URL
 # Usage: s3-presigned-upload <file> <mime-type> <presigned-url>
-s3-presigned-upload() {
+s3-presigned-put-upload() {
   local file="$1"
   local mime="$2"
   local url="$3"
@@ -218,10 +219,89 @@ s3-presigned-upload() {
     "$url"
 }
 
-s3-presigned-upload-auto() {
+s3-presigned-put-upload-auto() {
   local file="$1" url="$2"
   [[ -z "$file" || -z "$url" ]] && { echo "Usage: s3-presigned-upload-auto <file> <presigned-url>" >&2; return 1 }
   local mime
   mime=$(file -b --mime-type "$file") || return 1
-  s3-presigned-upload "$file" "$mime" "$url"
+  s3-presigned-put-upload "$file" "$mime" "$url"
+}
+
+# Upload file using presigned POST from JSON (e.g. AWS create_presigned_post: url + fields).
+# Usage: s3-presigned-post-upload-json <file> <json-file|-> [upload-field-name]
+# Use "-" as json path to read JSON from stdin. upload-field-name defaults to "file" (multipart file part).
+s3-presigned-post-upload-json() {
+  local file="$1" json_src="$2" upload_field="${3:-file}"
+  if [[ -z "$file" || -z "$json_src" ]]; then
+    echo 'Usage: s3-presigned-post-upload-json <file> <json-file|-> [upload-field-name]' >&2
+    return 1
+  fi
+  if [[ ! -f "$file" ]]; then
+    echo "Error: file not found: $file" >&2
+    return 1
+  fi
+  if [[ "$json_src" != "-" && ! -r "$json_src" ]]; then
+    echo "Error: JSON not found or not readable: $json_src" >&2
+    return 1
+  fi
+  command -v python3 >/dev/null 2>&1 || {
+    echo "Error: python3 is required for s3-presigned-post-upload-json" >&2
+    return 1
+  }
+  python3 - "$file" "$json_src" "$upload_field" <<'PY'
+import json
+import os
+import subprocess
+import sys
+
+
+def main() -> None:
+    if len(sys.argv) != 4:
+        print("internal error: expected file json_src upload_field", file=sys.stderr)
+        sys.exit(2)
+    file_path, json_src, upload_field = sys.argv[1], sys.argv[2], sys.argv[3]
+    if not os.path.isfile(file_path):
+        print(f"Error: file not found: {file_path}", file=sys.stderr)
+        sys.exit(1)
+    try:
+        if json_src == "-":
+            data = json.load(sys.stdin)
+        else:
+            with open(json_src, encoding="utf-8") as f:
+                data = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"Error: invalid JSON: {e}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"Error: cannot read JSON: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    url = data.get("url")
+    fields = data.get("fields")
+    if not isinstance(url, str) or not url:
+        print('Error: JSON must contain non-empty string "url"', file=sys.stderr)
+        sys.exit(1)
+    if not isinstance(fields, dict) or not fields:
+        print('Error: JSON must contain non-empty object "fields"', file=sys.stderr)
+        sys.exit(1)
+
+    args = ["curl", "-sS", "-w", "\nHTTP %{http_code}\n", "-X", "POST", url]
+    for key, val in fields.items():
+        if val is None:
+            print(f'Error: field "{key}" is null', file=sys.stderr)
+            sys.exit(1)
+        if not isinstance(val, (str, int, float, bool)):
+            print(
+                f'Error: field "{key}" must be a scalar (string, number, or boolean)',
+                file=sys.stderr,
+            )
+            sys.exit(1)
+        args.extend(["-F", f"{key}={val}"])
+    args.extend(["-F", f"{upload_field}=@{file_path}"])
+    sys.exit(subprocess.run(args).returncode)
+
+
+if __name__ == "__main__":
+    main()
+PY
 }
