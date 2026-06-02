@@ -13,5 +13,3 @@
 	format = ssh
 [commit]
 	gpgsign = true
-[core]
-	sshCommand = ssh
