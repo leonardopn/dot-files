@@ -302,3 +302,9 @@ if __name__ == "__main__":
     main()
 PY
 }
+
+if [ -f "$HOME/.env" ]; then
+  set -a
+  source "$HOME/.env"
+  set +a
+fi
