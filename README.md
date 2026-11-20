@@ -107,8 +107,6 @@ Link everything into `~/.claude` (idempotent, run again after adding a skill):
 ./scripts/link-claude.sh
 ```
 
-`settings.json` also carries the [caveman](https://www.npmjs.com/package/@caveman-ai/cli) integration (proxy via `ANTHROPIC_BASE_URL` and hooks), written by its installer through the symlink. On a new machine, install caveman with the same Node version from `nvm` before opening Claude Code, otherwise Claude cannot reach the API (the proxy isn't running) and the hooks fail. If the Node version changes, reinstall caveman so it rewrites the hook paths.
-
 ## Configure Git
 
 ```bash
