@@ -99,7 +99,7 @@ ln -s -f $(realpath ./.ssh/config) ~/.ssh/config
 
 Only portable config lives in `./claude`. Credentials (`.credentials.json`), history, sessions, caches, plugins and `~/.claude.json` stay local.
 
-Structure (see `claude/CLAUDE.md`): `settings.json`, `CLAUDE.md`, `rules/`, `skills/`, `agents/`, `commands/`.
+Structure (see `claude/CLAUDE.md`): `settings.json`, `CLAUDE.md`, `statusline.sh`, `rules/`, `hooks/`, `skills/`, `agents/`, `commands/`. Hooks and the status line need `jq` (in `packages.txt`).
 
 Link everything into `~/.claude` (idempotent, run again after adding a skill):
 

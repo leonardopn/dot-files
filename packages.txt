@@ -67,3 +67,4 @@ mypy
 downgrade
 extension-manager
 tex-fmt
+jq

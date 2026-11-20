@@ -10,7 +10,7 @@ DEST="$HOME/.claude"
 mkdir -p "$DEST" "$DEST/skills"
 
 # Arquivos e pastas linkados inteiros
-for item in settings.json CLAUDE.md keybindings.json rules agents commands; do
+for item in settings.json CLAUDE.md keybindings.json statusline.sh rules agents commands hooks; do
 	[ -e "$SRC/$item" ] && ln -sfn "$SRC/$item" "$DEST/$item"
 done
 
