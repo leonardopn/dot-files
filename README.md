@@ -86,6 +86,15 @@ gsettings set org.gnome.desktop.interface icon-theme "Papirus" && papirus-folder
 sudo ln -s -f $(realpath ./scripts/update-mirrors.sh) /etc/cron.weekly/update-mirrors | chmod +x /etc/cron.weekly/update-mirrors
 ```
 
+## Configure SSH
+
+Only the `config` file is versioned. Keys and `known_hosts` stay local in `~/.ssh` (ignored by `.gitignore`).
+
+```bash
+mkdir -p -m 700 ~/.ssh
+ln -s -f $(realpath ./.ssh/config) ~/.ssh/config
+```
+
 ## Configure Git
 
 ```bash
