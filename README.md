@@ -95,6 +95,18 @@ mkdir -p -m 700 ~/.ssh
 ln -s -f $(realpath ./.ssh/config) ~/.ssh/config
 ```
 
+## Claude Code
+
+Only portable config lives in `./claude`. Credentials (`.credentials.json`), history, sessions, caches, plugins and `~/.claude.json` stay local.
+
+Structure (see `claude/CLAUDE.md`): `settings.json`, `CLAUDE.md`, `rules/`, `skills/`, `agents/`, `commands/`.
+
+Link everything into `~/.claude` (idempotent, run again after adding a skill):
+
+```bash
+./scripts/link-claude.sh
+```
+
 ## Configure Git
 
 ```bash
