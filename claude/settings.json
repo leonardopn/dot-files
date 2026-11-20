@@ -42,26 +42,6 @@
           }
         ]
       }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/notify.sh"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/hooks/notify.sh"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
@@ -83,12 +63,9 @@
   "spinnerTipsEnabled": false,
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "high"
+      "effortLevel": "xhigh"
     }
   },
-  "theme": "auto",
-  "autoCompactEnabled": false,
-  "idleCompaction": false,
   "pluginConfigs": {
     "ponytail@ponytail": {
       "options": {
@@ -96,5 +73,8 @@
         "sendNames": true
       }
     }
-  }
+  },
+  "theme": "auto",
+  "autoCompactEnabled": false,
+  "idleCompaction": false
 }
