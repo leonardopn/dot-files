@@ -11,6 +11,7 @@
 - Antes de dizer que algo está pronto, rode o que o projeto oferece para validar (testes, type check,
   lint, build). Se não der para rodar, diga isso explicitamente.
 - Não adicione dependências novas sem eu pedir ou sem justificar antes.
+- O repositório dot-files é o local para configurações globais e compartilháveis da minha máquina. Quando eu pedir para você alterar algo global, deve ser feito lá.
 
 ## Configuração global do Claude
 
@@ -22,16 +23,16 @@ direto em `~/.claude/`: crie no repositório e rode o script de link.
 
 ### Onde cada coisa vai
 
-| O que                                | Caminho no repo                        |
-| ------------------------------------ | -------------------------------------- |
-| Instruções globais (este arquivo)    | `claude/CLAUDE.md`                     |
-| Rules globais (um `.md` por regra)   | `claude/rules/<nome>.md`               |
-| Skills globais                       | `claude/skills/<nome>/SKILL.md`        |
-| Subagentes                           | `claude/agents/<nome>.md`              |
-| Slash commands                       | `claude/commands/<nome>.md`            |
-| Scripts de hooks                     | `claude/hooks/<nome>.sh`               |
-| Status line                          | `claude/statusline.sh`                 |
-| Settings (permissões, hooks, tema)   | `claude/settings.json`                 |
+| O que                              | Caminho no repo                 |
+| ---------------------------------- | ------------------------------- |
+| Instruções globais (este arquivo)  | `claude/CLAUDE.md`              |
+| Rules globais (um `.md` por regra) | `claude/rules/<nome>.md`        |
+| Skills globais                     | `claude/skills/<nome>/SKILL.md` |
+| Subagentes                         | `claude/agents/<nome>.md`       |
+| Slash commands                     | `claude/commands/<nome>.md`     |
+| Scripts de hooks                   | `claude/hooks/<nome>.sh`        |
+| Status line                        | `claude/statusline.sh`          |
+| Settings (permissões, hooks, tema) | `claude/settings.json`          |
 
 - Rules usam o formato de `.claude/rules/`: um tópico por arquivo; frontmatter `paths:` opcional para
   limitar a regra a certos arquivos.
