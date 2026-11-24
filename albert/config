@@ -66,6 +66,12 @@ enabled=true
 enabled=true
 
 [python.emoji]
+enabled=false
+global_handler_enabled=false
+trigger=emoji
+use_derived=true
+
+[python.emoji_color]
 enabled=true
 global_handler_enabled=false
 trigger=emoji
@@ -99,6 +105,9 @@ hibernate_enabled=false
 
 [urlhandler]
 enabled=false
+
+[vpn]
+enabled=true
 
 [websearch]
 enabled=true

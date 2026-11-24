@@ -312,4 +312,11 @@ if [ -f "$HOME/.env" ]; then
   source "$HOME/.env"
   set +a
 fi
-. "$HOME/.local/bin/env"
+
+# Added by uv/astral installer. Load only when the file exists.
+if [ -f "$HOME/.local/bin/env" ]; then
+  . "$HOME/.local/bin/env"
+fi
+
+# Added by sonarqube-cli installer
+export PATH="$HOME/.local/share/sonarqube-cli/bin:$PATH"
