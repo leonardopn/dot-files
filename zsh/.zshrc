@@ -67,6 +67,21 @@ alias tfi="terraform init"
 alias tfp="terraform plan"
 alias tfa="terraform apply"
 alias fix-resolution="bash ~/Documents/scripts/set_ultrawide.sh"
+alias awslogin="aws sso login --sso-session sorenson"
+alias awslogin-prod="aws sso login --sso-session sorenson-prod --no-browser"
+awscheck() {
+  local profile login out arn role
+  for profile login in sso-sb awslogin sso-dev awslogin sso-prod awslogin-prod; do
+    if out=$(aws sts get-caller-identity --profile "$profile" --query Arn --output text 2>&1); then
+      arn=$out
+      role=${arn#*AWSReservedSSO_}
+      role=${${role%/*}%_*}
+      printf '\u2705 %-9s %s  %-26s %s\n' "$profile" "${${arn#arn:aws:sts::}%%:*}" "$role" "${arn##*/}"
+    else
+      printf '\u274c %-9s %s (rode %s)\n' "$profile" "${out##*$'\n'}" "$login"
+    fi
+  done
+}
 
 if command -v apt >/dev/null; then
     paru() {
